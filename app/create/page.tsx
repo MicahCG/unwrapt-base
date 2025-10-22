@@ -79,7 +79,7 @@ export default function CreateGiftPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Slots (1 = single claim, >1 = multi-claim)</label>
+          <label className="block text-sm font-medium mb-2">Slots (1 = single claim, &gt;1 = multi-claim)</label>
           <input
             type="number"
             value={slots}

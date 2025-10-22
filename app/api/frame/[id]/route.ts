@@ -4,8 +4,8 @@ import { encodeFunctionData } from 'viem';
 import { ACTIVE } from '@/lib/chain';
 import { GiftLinkABI } from '@/lib/abi/GiftLink';
 
-function frameResponse(body: any) { 
-  return NextResponse.json(body, { headers: { 'Content-Type': 'application/json' } }); 
+function frameResponse(body: Record<string, unknown>) {
+  return NextResponse.json(body, { headers: { 'Content-Type': 'application/json' } });
 }
 
 export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
