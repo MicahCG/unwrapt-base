@@ -13,7 +13,7 @@ export default function Home() {
       <div className={styles.content}>
         <Image
           priority
-          src="/logo.svg"
+          src="/logo.png"
           alt="Unwrapt Logo"
           width={200}
           height={200}

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Unwrapt",
     images: [
       {
-        url: "/logo.svg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Unwrapt - Crypto Gifts via Farcaster Frames",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Unwrapt - Crypto Gifts via Farcaster Frames",
     description: "Create and share crypto gifts through Farcaster Frames. Deposit USDC to create gifts with expiry and claim slots.",
-    images: ["/logo.svg"],
+    images: ["/logo.png"],
     creator: "@unwrapt",
   },
   robots: {
