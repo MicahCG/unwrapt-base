@@ -15,12 +15,18 @@
     "imageUrl": "https://unwrapt-base.vercel.app/preview.png",
     "icon": "https://unwrapt-base.vercel.app/icon.png",
     "splashImage": "https://unwrapt-base.vercel.app/splash.png",
+    "splashImageUrl": "https://unwrapt-base.vercel.app/splash.png",
     "splashBackgroundColor": "#0B0B28",
     "description": "Create and share on-chain gifts via Farcaster Frames on Base.",
     "privacyPolicyUrl": "https://unwrapt-base.vercel.app/privacy",
     "termsOfServiceUrl": "https://unwrapt-base.vercel.app/terms",
+    "primaryCategory": "social",
+    "tags": ["gifts", "frames", "base", "onchain", "social"],
     "images": [
       "https://unwrapt-base.vercel.app/og.png"
     ]
+  },
+  "baseBuilder": {
+    "ownerAddress": "0x3B127d99AF98fa31404793918175BacD622082B8F"
   }
 }
