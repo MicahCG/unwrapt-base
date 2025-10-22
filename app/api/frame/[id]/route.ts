@@ -8,8 +8,8 @@ function frameResponse(body: Record<string, unknown>) {
   return NextResponse.json(body, { headers: { 'Content-Type': 'application/json' } });
 }
 
-export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id;
+export async function GET(_: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   return frameResponse({
     image: `${process.env.NEXT_PUBLIC_URL}/og/gift-${id}.png`,
     buttons: [ { text: 'Claim' }, { text: 'Status' }, { text: 'Share' } ],
@@ -17,8 +17,9 @@ export async function GET(_: NextRequest, { params }: { params: { id: string } }
   });
 }
 
-export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
-  const id = BigInt(params.id);
+export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id: idStr } = await params;
+  const id = BigInt(idStr);
   const v = await verifyFrameRequest(req);
   if (!v.valid) return frameResponse({ error: 'Invalid frame' });
 
@@ -40,16 +41,16 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
   // Button 2: Status — just re-render image with remaining/expiry (MVP: static)
   if (v.buttonIndex === 2) {
     return frameResponse({
-      image: `${process.env.NEXT_PUBLIC_URL}/og/status-${params.id}.png`,
+      image: `${process.env.NEXT_PUBLIC_URL}/og/status-${idStr}.png`,
       buttons: [ { text: 'Claim' }, { text: 'Share' } ],
-      post_url: `${process.env.NEXT_PUBLIC_URL}/api/frame/${params.id}`,
+      post_url: `${process.env.NEXT_PUBLIC_URL}/api/frame/${idStr}`,
     });
   }
 
   // Button 3: Share — prefill a cast with this frame URL
   return frameResponse({
     text: 'Claim this GiftLink →',
-    links: [{ url: `${process.env.NEXT_PUBLIC_URL}/api/frame/${params.id}` }],
+    links: [{ url: `${process.env.NEXT_PUBLIC_URL}/api/frame/${idStr}` }],
   });
 }
 

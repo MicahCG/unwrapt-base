@@ -23,7 +23,7 @@ export default function CreateGiftPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ secret: secretHex }) 
       });
-      const { claimHash } = await res.json();
+      const { claimHash: _claimHash } = await res.json();
 
       const expiry = Math.floor(Date.now()/1000) + days*24*3600;
       const amountWei = parseUnits(amount, 6); // assume USDC 6 decimals
@@ -36,9 +36,9 @@ export default function CreateGiftPage() {
         args: [
           amountWei,
           BigInt(expiry),
-          BigInt(slots),
-          claimHash as `0x${string}`,
-          BigInt(Number(process.env.NEXT_PUBLIC_PLATFORM_FEE_BPS || 75))
+          Number(slots),
+          _claimHash as `0x${string}`,
+          Number(process.env.NEXT_PUBLIC_PLATFORM_FEE_BPS || 75)
         ],
       });
 
