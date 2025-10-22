@@ -107,6 +107,12 @@ export const GiftLinkABI = [
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "mode",
+        "type": "uint8"
       }
     ],
     "name": "GiftCreated",
@@ -186,6 +192,11 @@ export const GiftLinkABI = [
         "internalType": "uint16",
         "name": "feeBps",
         "type": "uint16"
+      },
+      {
+        "internalType": "uint8",
+        "name": "mode",
+        "type": "uint8"
       }
     ],
     "name": "createGift",
@@ -300,6 +311,44 @@ export const GiftLinkABI = [
         "internalType": "contract IERC20",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getGiftMode",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRemainingSlots",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",

@@ -9,6 +9,7 @@ export default function CreateGiftPage() {
   const [amount, setAmount] = useState('10');
   const [days, setDays] = useState(7);
   const [slots, setSlots] = useState(1);
+  const [mysteryMode, setMysteryMode] = useState(false);
   const [giftId, setGiftId] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { writeContractAsync } = useWriteContract();
@@ -38,7 +39,8 @@ export default function CreateGiftPage() {
           BigInt(expiry),
           Number(slots),
           _claimHash as `0x${string}`,
-          Number(process.env.NEXT_PUBLIC_PLATFORM_FEE_BPS || 75)
+          Number(process.env.NEXT_PUBLIC_PLATFORM_FEE_BPS || 75),
+          mysteryMode ? 1 : 0 // SplitMode: 0 = Even, 1 = Mystery
         ],
       });
 
@@ -90,6 +92,24 @@ export default function CreateGiftPage() {
             max="1000"
           />
         </div>
+
+        <div className="flex items-center space-x-3 p-3 border rounded bg-gray-50">
+          <input
+            type="checkbox"
+            id="mysteryMode"
+            checked={mysteryMode}
+            onChange={(e) => setMysteryMode(e.target.checked)}
+            className="w-4 h-4 cursor-pointer"
+          />
+          <label htmlFor="mysteryMode" className="text-sm font-medium cursor-pointer">
+            🎲 Random Split (Mystery Mode)
+          </label>
+        </div>
+        {mysteryMode && (
+          <p className="text-xs text-gray-600 -mt-2 ml-1">
+            Each claim gets a random amount between 5-150% of the average. Last claimer gets the remainder.
+          </p>
+        )}
 
         <button 
           onClick={onCreate} 

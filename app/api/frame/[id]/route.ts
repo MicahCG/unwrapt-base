@@ -35,6 +35,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       chainId: 'eip155:' + ACTIVE.id,
       method: 'eth_sendTransaction',
       params: [{ to: ACTIVE.gift, data }],
+      // After successful tx, the GiftClaimed event will contain the netAmount
+      // The frame could redirect to a success page showing "You got X USDC 🎉"
     });
   }
 
