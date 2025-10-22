@@ -6,7 +6,7 @@
     "signature": "Q7fD0owdHlkXIOXahvf1EJ4+vl9g/YGM3uoY1lK9t/RROo5i2zuYHegMr5tmNrRwXTh3BWO3W926wd7PvtBkZBw="
   },
   "miniapp": {
-    "version": "1.0.0",
+    "version": "v1.0.0",
     "iconUrl": "https://unwrapt-base.vercel.app/icon.png",
     "homeUrl": "https://unwrapt-base.vercel.app",
     "name": "Unwrapt",
