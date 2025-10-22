@@ -12,7 +12,7 @@
     "name": "Unwrapt",
     "developer": "Unwrapt",
     "website": "https://unwrapt-base.vercel.app",
-    "imageUrl": "https://unwrapt-base.vercel.app/preview.png",
+    "imageUrl": "https://i.ibb.co/ynjdYbc9/alt.png",
     "icon": "https://unwrapt-base.vercel.app/icon.png",
     "splashImage": "https://unwrapt-base.vercel.app/splash.png",
     "splashImageUrl": "https://unwrapt-base.vercel.app/splash.png",
@@ -23,7 +23,7 @@
     "primaryCategory": "social",
     "tags": ["gifts", "frames", "base", "onchain", "social"],
     "images": [
-      "https://unwrapt-base.vercel.app/og.png"
+      "https://i.ibb.co/ynjdYbc9/alt.png"
     ]
   },
   "baseBuilder": {
