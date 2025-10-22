@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { parseUnits } from 'viem';
-import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { useWriteContract } from 'wagmi';
 import { GiftLinkABI } from '@/lib/abi/GiftLink';
 import { ACTIVE } from '@/lib/chain';
 
@@ -29,19 +29,19 @@ export default function CreateGiftPage() {
       const amountWei = parseUnits(amount, 6); // assume USDC 6 decimals
 
       // 1) approve token first (omitted here) then 2) createGift
-      const hash = await writeContractAsync({
+      await writeContractAsync({
         address: ACTIVE.gift as `0x${string}`,
         abi: GiftLinkABI,
         functionName: 'createGift',
         args: [
-          amountWei, 
-          BigInt(expiry), 
-          BigInt(slots), 
-          claimHash as `0x${string}`, 
+          amountWei,
+          BigInt(expiry),
+          BigInt(slots),
+          claimHash as `0x${string}`,
           BigInt(Number(process.env.NEXT_PUBLIC_PLATFORM_FEE_BPS || 75))
         ],
       });
-      
+
       // TODO: parse logs or simply fetch nextId via read after tx mine
       setGiftId(123); // Placeholder - will be updated with actual gift ID
     } catch (error) {
