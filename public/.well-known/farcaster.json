@@ -1,9 +1,9 @@
 {
   "version": "1.0",
   "accountAssociation": {
-    "header": "",
-    "payload": "",
-    "signature": ""
+    "header": "eyJmaWQiOjI5MjY0OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDMxQTNkM0E2QmIyQTM5RUNjYTY0ODhmQjE1YjIxQmE1QUM4MDA5QzcifQ",
+    "payload": "eyJkb21haW4iOiJ1bndyYXB0LWJhc2UudmVyY2VsLmFwcCJ9",
+    "signature": "Q7fD0owdHlkXIOXahvf1EJ4+vl9g/YGM3uoY1lK9t/RROo5i2zuYHegMr5tmNrRwXTh3BWO3W926wd7PvtBkZBw="
   },
   "miniapp": {
     "name": "Unwrapt",
