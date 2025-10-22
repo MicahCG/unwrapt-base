@@ -53,3 +53,6 @@ logs/
 .env.local
 .env.production
 .env.development
+
+# Farcaster manifest (served via redirect)
+public/.well-known/farcaster.json
