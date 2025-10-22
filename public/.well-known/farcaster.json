@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI5MjY0OSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDMxQTNkM0E2QmIyQTM5RUNjYTY0ODhmQjE1YjIxQmE1QUM4MDA5QzcifQ",
+    "payload": "eyJkb21haW4iOiJ1bndyYXB0LWJhc2UudmVyY2VsLmFwcCJ9",
+    "signature": "Q7fD0owdHlkXIOXahvf1EJ4+vl9g/YGM3uoY1lK9t/RROo5i2zuYHegMr5tmNrRwXTh3BWO3W926wd7PvtBkZBw="
+  },
+  "miniapp": {
+    "name": "Unwrapt",
+    "developer": "Unwrapt",
+    "website": "https://unwrapt-base.vercel.app",
+    "imageUrl": "https://unwrapt-base.vercel.app/preview.png",
+    "icon": "https://unwrapt-base.vercel.app/icon.png",
+    "splashImage": "https://unwrapt-base.vercel.app/splash.png",
+    "splashBackgroundColor": "#0B0B28",
+    "description": "Create and share on-chain gifts via Farcaster Frames on Base.",
+    "privacyPolicyUrl": "https://unwrapt-base.vercel.app/privacy",
+    "termsOfServiceUrl": "https://unwrapt-base.vercel.app/terms",
+    "images": [
+      "https://unwrapt-base.vercel.app/og.png"
+    ]
+  }
+}
